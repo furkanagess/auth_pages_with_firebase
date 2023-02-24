@@ -1,0 +1,45 @@
+{
+    "welcome":"Welcome to My App",
+    "onBoard": {
+        "page1": {
+            "title": "Popularised in the 1960s with the release of",
+            "description":"It has survived not only five centuries, but also the leap into electronic typesetting remaining essentially unchanged."
+        },
+        "page2": {
+            "title": "It was popularised in the release",
+            "description": "It has survived not only five centuries, but also the leap into electronic typesetting remaining essentially unchanged."
+        },
+        "page3": {
+            "title": "It has survived not only five centuries.",
+            "description": "It has survived not only five centuries, but also the leap into electronic typesetting remaining essentially unchanged."
+        },
+        "skip":"Skip"
+    
+    },
+    "login":{
+        "mail":"Mail",
+        "password":"Password",
+        "login":"Login",
+        "forgot":"Forgot Password ?",
+        "first":"Here for the first time ?   ",
+        "signup":"Sign up"
+    },
+    "signup":{
+        "name":"Name",
+        "account":"Already have an account ?  "
+    },
+    "reset":"Reset Password",
+    "alert":{
+        "succes":{
+            "register":{
+                "text":"You can go back to Login page",
+                "title":"Successfully Register"
+            },
+            "password":{
+                "text":"Please check your mail.",
+                "title":"Password Successfully Reset"
+            }
+        }
+    }
+
+}
