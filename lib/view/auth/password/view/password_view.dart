@@ -75,11 +75,6 @@ class PasswordView extends StatelessWidget {
       padding: context.paddingNormal,
       child: ElevatedButton(
         onPressed: () {
-          // viewModel.showSuccessAlert(
-          //   context,
-          //   text: LocaleKeys.alert_succes_password_text.locale,
-          //   title: LocaleKeys.alert_succes_password_title.locale,
-          // );
           viewModel.resetPassword();
         },
         child: Center(
@@ -105,7 +100,7 @@ class PasswordView extends StatelessWidget {
     return TextFormField(
       controller: viewModel.emailController,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (email) => email != null && email.contains("@") ? null : "enter valid",
+      validator: (email) => email != null && email.contains("@") ? null : "Enter a valid mail.",
       cursorColor: context.colors.onSecondary,
       decoration: InputDecoration(
         focusColor: context.colors.onSecondary,

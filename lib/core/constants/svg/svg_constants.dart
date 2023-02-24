@@ -12,4 +12,5 @@ class SVGConstants {
   String get welcome => toSVG("welcome");
   String get mobileLogin => toSVG("mobile_login");
   String get forgotPassword => toSVG("forgot_password");
+  String get welcomeCat => toSVG("welcome_cat");
 }

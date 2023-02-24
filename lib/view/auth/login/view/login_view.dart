@@ -68,33 +68,19 @@ class LoginView extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        // Spacer(),
-        // Text(
-        //   LocaleKeys.login_first.locale,
-        //   style: context.textTheme.bodyText2,
-        // ),
-        // InkWell(
-        //   onTap: () {
-        //     viewModel.navigateToSignup();
-        //   },
-        //   child: Text(
-        //     LocaleKeys.login_signup.locale,
-        //     style: context.textTheme.bodyText1?.copyWith(
-        //       color: context.colors.onSecondary,
-        //       fontWeight: FontWeight.bold,
-        //     ),
-        //   ),
-        // ),
         Spacer(),
         RichText(
           text: TextSpan(
-            text: "No account ?",
+            text: "No account ?  ",
             style: context.textTheme.bodyText2,
             children: [
               TextSpan(
                 recognizer: TapGestureRecognizer()..onTap = onClickedSignUp,
-                text: "Sign up",
-                style: context.textTheme.bodyText2,
+                text: LocaleKeys.login_signup.locale,
+                style: context.textTheme.bodyText2?.copyWith(
+                  color: context.colors.onSecondary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -105,28 +91,15 @@ class LoginView extends StatelessWidget {
   }
 
   Widget forgotText(BuildContext context, LoginViewModel viewModel) {
-    // return InkWell(
-    //   onTap: () {
-    //     viewModel.navigateToPassword();
-    //   },
-    //   child: Text(
-    //     LocaleKeys.login_forgot.locale,
-    //     style: context.textTheme.bodyText1?.copyWith(
-    //       color: context.colors.onSecondary,
-    //       fontWeight: FontWeight.bold,
-    //     ),
-    //   ),
-    // );
     return GestureDetector(
       child: Text(
-        "forgot password",
-        style: context.textTheme.bodyText2,
-      ),
-      onTap: () => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (context) => PasswordView(),
+        LocaleKeys.login_forgot.locale,
+        style: context.textTheme.bodyText2?.copyWith(
+          color: context.colors.onSecondary,
+          fontWeight: FontWeight.bold,
         ),
       ),
+      onTap: () => viewModel.navigateToPassword(),
     );
   }
 
@@ -159,7 +132,7 @@ class LoginView extends StatelessWidget {
   Widget buildPasswordTextField(BuildContext context, LoginViewModel viewModel) {
     return Observer(builder: (_) {
       return TextFormField(
-        validator: (password) => password != null && password.length < 6 ? "Enter valid passowrd" : null,
+        validator: (password) => password != null && password.length < 6 ? "Enter valid password." : null,
         controller: viewModel.passwordController,
         cursorColor: context.colors.onSecondary,
         obscureText: viewModel.isLockOpen,
@@ -190,7 +163,7 @@ class LoginView extends StatelessWidget {
 
   TextFormField buildMailTextField(BuildContext context, LoginViewModel viewModel) {
     return TextFormField(
-      validator: (email) => email != null && email.contains("@") ? null : "enter valid",
+      validator: (email) => email != null && email.contains("@") ? null : "Enter a valid mail.",
       controller: viewModel.emailController,
       cursorColor: context.colors.onSecondary,
       decoration: InputDecoration(

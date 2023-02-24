@@ -62,8 +62,8 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
     } on FirebaseAuthException catch (e) {
       showError(
         viewModelContext,
-        text: "text",
-        title: "title",
+        text: "Please enter a valid mail & password.",
+        title: "Wrong Mail & Password !",
       );
     }
   }

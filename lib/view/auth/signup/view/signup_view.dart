@@ -46,12 +46,10 @@ class SignupView extends StatelessWidget {
                   flex: 2,
                   child: buildMailTextField(context, viewModel),
                 ),
-                // Add dynamic eye icon for obscure password using Mobx
                 Expanded(
                   flex: 2,
                   child: buildPasswordTextField(context, viewModel),
                 ),
-                // When click to signupButton it will show up a alertDialog about Succesfully Register with Lottie.
                 Expanded(
                   flex: 2,
                   child: signupButton(context, viewModel),
@@ -76,13 +74,16 @@ class SignupView extends StatelessWidget {
         Spacer(),
         RichText(
           text: TextSpan(
-            text: "No account ?",
+            text: "You already have an account ?   ",
             style: context.textTheme.bodyText2,
             children: [
               TextSpan(
                 recognizer: TapGestureRecognizer()..onTap = onClickedSignIn,
-                text: "Sign up",
-                style: context.textTheme.bodyText2,
+                text: "Login",
+                style: context.textTheme.bodyText2?.copyWith(
+                  color: context.colors.onSecondary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ],
           ),
@@ -97,11 +98,6 @@ class SignupView extends StatelessWidget {
       padding: context.paddingNormal,
       child: ElevatedButton(
         onPressed: () {
-          // viewModel.showSuccessAlert(
-          //   context,
-          //   text: LocaleKeys.alert_succes_register_text.locale,
-          //   title: LocaleKeys.alert_succes_register_title.locale,
-          // );
           viewModel.signUp();
         },
         child: Center(
@@ -124,36 +120,38 @@ class SignupView extends StatelessWidget {
   }
 
   Widget buildPasswordTextField(BuildContext context, SignUpViewModel viewModel) {
-    return Observer(builder: (_) {
-      return TextFormField(
-        autovalidateMode: AutovalidateMode.onUserInteraction,
-        validator: (password) => password != null && password.length < 6 ? "Enter valid passowrd" : null,
-        controller: viewModel.passwordController,
-        cursorColor: context.colors.onSecondary,
-        obscureText: viewModel.isLockOpen,
-        decoration: InputDecoration(
-          suffixIcon: InkWell(
-            onTap: () {
-              viewModel.isLockChange();
-            },
-            child: Observer(
-              builder: (_) {
-                return Icon(
-                  viewModel.isLockOpen ? Icons.visibility_off : Icons.visibility,
-                  color: context.iconTheme.color,
-                );
+    return Observer(
+      builder: (_) {
+        return TextFormField(
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          validator: (password) => password != null && password.length < 6 ? "Enter a valid password." : null,
+          controller: viewModel.passwordController,
+          cursorColor: context.colors.onSecondary,
+          obscureText: viewModel.isLockOpen,
+          decoration: InputDecoration(
+            suffixIcon: InkWell(
+              onTap: () {
+                viewModel.isLockChange();
               },
+              child: Observer(
+                builder: (_) {
+                  return Icon(
+                    viewModel.isLockOpen ? Icons.visibility_off : Icons.visibility,
+                    color: context.iconTheme.color,
+                  );
+                },
+              ),
+            ),
+            labelText: LocaleKeys.login_password.locale,
+            icon: Icon(
+              Icons.lock_outline_rounded,
+              size: context.iconTheme.size,
+              color: context.colors.onSecondary,
             ),
           ),
-          labelText: LocaleKeys.login_password.locale,
-          icon: Icon(
-            Icons.lock_outline_rounded,
-            size: 30,
-            color: context.colors.onSecondary,
-          ),
-        ),
-      );
-    });
+        );
+      },
+    );
   }
 
   TextFormField buildNameTextField(BuildContext context) {
@@ -164,7 +162,7 @@ class SignupView extends StatelessWidget {
         labelText: LocaleKeys.signup_name.locale,
         icon: Icon(
           Icons.person_outline_outlined,
-          size: 30,
+          size: context.iconTheme.size,
           color: context.colors.onSecondary,
         ),
       ),
@@ -174,7 +172,7 @@ class SignupView extends StatelessWidget {
   TextFormField buildMailTextField(BuildContext context, SignUpViewModel viewModel) {
     return TextFormField(
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (email) => email != null && email.contains("@") ? null : "enter valid",
+      validator: (email) => email != null && email.contains("@") ? null : "Enter a valid mail.",
       controller: viewModel.emailController,
       cursorColor: context.colors.onSecondary,
       decoration: InputDecoration(

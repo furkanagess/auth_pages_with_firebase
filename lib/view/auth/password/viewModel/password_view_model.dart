@@ -19,7 +19,7 @@ abstract class _PasswordViewModelBase with Store, BaseViewModel {
   @override
   void init() {}
   void navigateToLogin() {
-    navigation.navigateToPage(path: NavigationConstants.LOGIN_VIEW);
+    Navigator.pop(viewModelContext);
   }
 
   @observable
@@ -66,9 +66,9 @@ abstract class _PasswordViewModelBase with Store, BaseViewModel {
       await FirebaseAuth.instance.sendPasswordResetEmail(
         email: emailController.text.trim(),
       );
-      showSuccessAlert(viewModelContext, text: "text", title: "title");
+      showSuccessAlert(viewModelContext, text: "Please check your mailbox.", title: "Mail Successfuly Sended !");
     } catch (e) {
-      showError(viewModelContext, text: "text", title: "title");
+      showError(viewModelContext, text: "Please enter a valid mail.", title: "Wrong Mail !");
     }
   }
 }

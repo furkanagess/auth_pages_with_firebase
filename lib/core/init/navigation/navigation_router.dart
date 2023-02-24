@@ -14,7 +14,7 @@ class NavigationRoute {
   Route<dynamic> generateRoute(RouteSettings args) {
     switch (args.name) {
       // case NavigationConstants.LOGIN_VIEW:
-      //   return normalNavigate(LoginView(), NavigationConstants.LOGIN_VIEW);
+      //   return normalNavigate(LoginView(onClickedSignUp: too), NavigationConstants.LOGIN_VIEW);
       // case NavigationConstants.SIGNUP_VIEW:
       //   return normalNavigate(SignupView(), NavigationConstants.SIGNUP_VIEW);
       case NavigationConstants.PASSWORD_VIEW:

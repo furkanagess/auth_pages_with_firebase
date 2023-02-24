@@ -17,20 +17,23 @@ abstract class  LocaleKeys {
   static const login_password = 'login.password';
   static const login_login = 'login.login';
   static const login_forgot = 'login.forgot';
-  static const login_first = 'login.first';
+  static const login_noAccount = 'login.noAccount';
   static const login_signup = 'login.signup';
   static const login = 'login';
   static const signup_name = 'signup.name';
   static const signup_account = 'signup.account';
   static const signup = 'signup';
   static const reset = 'reset';
-  static const alert_succes_register_text = 'alert.succes.register.text';
-  static const alert_succes_register_title = 'alert.succes.register.title';
-  static const alert_succes_register = 'alert.succes.register';
-  static const alert_succes_password_text = 'alert.succes.password.text';
-  static const alert_succes_password_title = 'alert.succes.password.title';
-  static const alert_succes_password = 'alert.succes.password';
-  static const alert_succes = 'alert.succes';
+  static const alert_validMP = 'alert.validMP';
+  static const alert_wrongMP = 'alert.wrongMP';
+  static const alert_check = 'alert.check';
+  static const alert_validM = 'alert.validM';
+  static const alert_sendedMail = 'alert.sendedMail';
+  static const alert_wrongM = 'alert.wrongM';
   static const alert = 'alert';
+  static const signOut = 'signOut';
+  static const valid_password = 'valid.password';
+  static const valid_mail = 'valid.mail';
+  static const valid = 'valid';
 
 }

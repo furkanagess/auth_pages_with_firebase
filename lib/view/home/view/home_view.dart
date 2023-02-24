@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/base/view/base_view.dart';
+import 'package:flutter_auth/core/extension/context_extension.dart';
+import 'package:flutter_auth/core/extension/string_extension.dart';
 import 'package:flutter_auth/view/home/viewModel/home_view_model.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+import '../../../core/constants/svg/svg_constants.dart';
+import '../../../core/init/lang/locale_keys.g.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -16,19 +22,35 @@ class HomeView extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Center(
-              child: Text("HOME"),
+            Spacer(
+              flex: 2,
             ),
-            Center(
-              child: Text(
-                viewModel.user.email!,
+            Expanded(
+              flex: 5,
+              child: buildSVG(),
+            ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  viewModel.user.email!,
+                  style: context.textTheme.headline5,
+                ),
               ),
             ),
-            ElevatedButton(
-              onPressed: () {
-                viewModel.signOut();
-              },
-              child: Text("Sign Out"),
+            Expanded(
+              flex: 2,
+              child: signOutButton(context, viewModel),
+            ),
+            Expanded(
+              flex: 2,
+              child: signOutButton(context, viewModel),
+            ),
+            Expanded(
+              flex: 2,
+              child: signOutButton(context, viewModel),
+            ),
+            Spacer(
+              flex: 2,
             ),
           ],
         ),
@@ -36,3 +58,31 @@ class HomeView extends StatelessWidget {
     );
   }
 }
+
+Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
+  return Padding(
+    padding: context.paddingNormal,
+    child: ElevatedButton(
+      onPressed: () {
+        viewModel.signOut();
+      },
+      child: Center(
+        child: Text(
+          "Sign Out",
+          style: context.textTheme.headline6?.copyWith(
+            color: context.colors.background,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        padding: context.paddingLow,
+        shape: StadiumBorder(),
+        backgroundColor: context.colors.onSecondary,
+      ),
+    ),
+  );
+}
+
+SvgPicture buildSVG() => SvgPicture.asset(SVGConstants.instance.welcomeCat);

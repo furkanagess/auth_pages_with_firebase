@@ -59,7 +59,7 @@ abstract class _SignUpViewModelBase with Store, BaseViewModel {
         password: passwordController.text.trim(),
       );
     } on FirebaseAuthException catch (e) {
-      showError(viewModelContext, text: "text", title: "title");
+      showError(viewModelContext, text: "validMP", title: "wrongMP");
     }
   }
 }

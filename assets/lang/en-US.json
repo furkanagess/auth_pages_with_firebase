@@ -21,25 +21,29 @@
         "password":"Password",
         "login":"Login",
         "forgot":"Forgot Password ?",
-        "first":"Here for the first time ?   ",
+        "noAccount":"No account ?   ",
         "signup":"Sign up"
+        
     },
+
     "signup":{
         "name":"Name",
-        "account":"Already have an account ?  "
+        "account":"You already have an account ?   "
     },
     "reset":"Reset Password",
     "alert":{
-        "succes":{
-            "register":{
-                "text":"You can go back to Login page",
-                "title":"Successfully Register"
-            },
-            "password":{
-                "text":"Please check your mail.",
-                "title":"Password Successfully Reset"
-            }
-        }
+"validMP":"Please enter a valid mail & password. ",
+"wrongMP":"Wrong Mail & Password !",
+"check":"Please check your mailbox.",
+"validM":"Please enter a valid mail.",
+"sendedMail":"Mail Successfuly Sended !",
+"wrongM":"Wrong Mail !"
+    },
+    "signOut":"Sign Out",
+    
+    "valid":{
+        "password":"Enter a valid password.",
+        "mail":"Enter a valid mail."
     }
 
 }
