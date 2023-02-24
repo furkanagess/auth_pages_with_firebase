@@ -43,13 +43,13 @@
 
   ![viewModel (3)](https://user-images.githubusercontent.com/92018394/221279873-d68d23df-c2d5-4592-a76c-9a0789f5e1bb.png)
   
-# Firebase  
+# Firebase Setup 
   - Firstly,
   
     ## Login Page
        - The Login Page in mobile apps is the screen where the user enters their credentials, such as a username and password, to access the app's features and data that are restricted to authenticated users. 
        -----------
-       - Firebase Entegration with FirebaseAuthentication (***The sample code is below.***)
+       - Firebase Entegration for Login Page with FirebaseAuthentication (***The sample code is below.***)
      ![viewModel (4)](https://user-images.githubusercontent.com/92018394/221283457-ff5d36cb-65f2-436e-b634-a128134eeafa.png)
      ---------
        - Password Visibility Control with Mobx State Management. (***The sample code is below.***)
