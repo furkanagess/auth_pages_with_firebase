@@ -1,16 +1,17 @@
-# flutter_auth
+# Authentication Pages With Using Firebase
 
-A new Flutter project.
+- After integrating the 'flutter_base_project' => (https://github.com/furkanagess/flutter_base_project) into your project, this project includes the must-have Authentication pages of a mobile application. 
+- Authentication pages are the pages where the application introduction, registration, and login processes are provided when you first use an application and this project includes ***Onboard***, ***Login***, ***Signup***, and ***Forgot Password*** sections. 
+- Authentication processes are provided using ***Firebase*** technology.
+- **The images, icons, and colors used in the pages are my preferences. After completing the necessary steps, you can change them as you wish.** 
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Entegration Steps
+  - 1-) Integrate 'flutter_base_project' into your project => https://github.com/furkanagess/flutter_base_project
+  - 2-) Develop the Onboard Pages.
+  - 3-) Setup Firebase Authentication.
+  - 4-) Login Firebase Authentication.
+  - 5-) Signup Firebase Authentication.
+  - 6-) Forgot Password Authentication.
+  
+# Onboard   
+  
