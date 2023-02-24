@@ -12,6 +12,7 @@
   - 4-) Login Firebase Authentication.
   - 5-) Signup Firebase Authentication.
   - 6-) Forgot Password Authentication.
+  - 7-) Develop the Home Page.
   
 # Onboard   
   
