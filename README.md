@@ -37,6 +37,7 @@
   
 # Onboard   
   - The Onboard Page, also known as the App Intro Page, is a screen that appears when a user opens a mobile app for the first time. It provides an introduction to the app and its features, and may include a series of screens with text, images, and animations that guide the user through the app's functionality. The purpose of the Onboard Page is to familiarize the user with the app's interface and help them get started with using it.
+  - Circles That Dynamically Change Depending on Page Transition with Mobx State Management (***The sample code is below.***)
 
 
   ![viewModel (3)](https://user-images.githubusercontent.com/92018394/221279873-d68d23df-c2d5-4592-a76c-9a0789f5e1bb.png)
@@ -46,8 +47,8 @@
   
     ## Login Page
        - The Login Page in mobile apps is the screen where the user enters their credentials, such as a username and password, to access the app's features and data that are restricted to authenticated users. 
-       
+       - Firebase Entegration with FirebaseAuthentication (***The sample code is below.***)
      ![viewModel (4)](https://user-images.githubusercontent.com/92018394/221283457-ff5d36cb-65f2-436e-b634-a128134eeafa.png)
-       - Password Visibility Control with Mobx State Management.
+       - Password Visibility Control with Mobx State Management. (***The sample code is below.***)
     ## Signup Page  
 
