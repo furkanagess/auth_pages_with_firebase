@@ -71,7 +71,7 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
       },
       child: Center(
         child: Text(
-          "Sign Out",
+          LocaleKeys.signOut.locale,
           style: context.textTheme.headline6?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,
@@ -101,7 +101,7 @@ Padding chaneThemeButton(BuildContext context, HomeViewModel viewModel) {
       },
       label: Center(
         child: Text(
-          "Change the App Theme",
+          LocaleKeys.changeTheme.locale,
           style: context.textTheme.headline6?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,

@@ -1,11 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
 import 'package:mobx/mobx.dart';
 import 'package:flutter_auth/core/base/model/base_view_model.dart';
 import 'package:quickalert/quickalert.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
-
+import 'package:flutter_auth/core/extension/string_extension.dart';
 import '../../../../core/constants/navigation/navigation_constants.dart';
 part 'login_view_model.g.dart';
 
@@ -17,6 +18,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   @override
   void init() {}
+
   void navigateToSignup() {
     navigation.navigateToPage(path: NavigationConstants.SIGNUP_VIEW);
   }
@@ -62,8 +64,8 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
     } on FirebaseAuthException catch (e) {
       showError(
         viewModelContext,
-        text: "Please enter a valid mail & password.",
-        title: "Wrong Mail & Password !",
+        text: LocaleKeys.alert_validMP.locale,
+        title: LocaleKeys.alert_wrongMP.locale,
       );
     }
   }

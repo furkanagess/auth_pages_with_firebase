@@ -71,7 +71,7 @@ class LoginView extends StatelessWidget {
         Spacer(),
         RichText(
           text: TextSpan(
-            text: "No account ?  ",
+            text: LocaleKeys.login_noAccount.locale,
             style: context.textTheme.bodyText2,
             children: [
               TextSpan(
@@ -132,7 +132,7 @@ class LoginView extends StatelessWidget {
   Widget buildPasswordTextField(BuildContext context, LoginViewModel viewModel) {
     return Observer(builder: (_) {
       return TextFormField(
-        validator: (password) => password != null && password.length < 6 ? "Enter valid password." : null,
+        validator: (password) => password != null && password.length < 6 ? LocaleKeys.valid_password.locale : null,
         controller: viewModel.passwordController,
         cursorColor: context.colors.onSecondary,
         obscureText: viewModel.isLockOpen,
@@ -163,7 +163,7 @@ class LoginView extends StatelessWidget {
 
   TextFormField buildMailTextField(BuildContext context, LoginViewModel viewModel) {
     return TextFormField(
-      validator: (email) => email != null && email.contains("@") ? null : "Enter a valid mail.",
+      validator: (email) => email != null && email.contains("@") ? null : LocaleKeys.valid_mail.locale,
       controller: viewModel.emailController,
       cursorColor: context.colors.onSecondary,
       decoration: InputDecoration(

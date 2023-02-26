@@ -100,7 +100,7 @@ class PasswordView extends StatelessWidget {
     return TextFormField(
       controller: viewModel.emailController,
       autovalidateMode: AutovalidateMode.onUserInteraction,
-      validator: (email) => email != null && email.contains("@") ? null : "Enter a valid mail.",
+      validator: (email) => email != null && email.contains("@") ? null : LocaleKeys.valid_mail.locale,
       cursorColor: context.colors.onSecondary,
       decoration: InputDecoration(
         focusColor: context.colors.onSecondary,

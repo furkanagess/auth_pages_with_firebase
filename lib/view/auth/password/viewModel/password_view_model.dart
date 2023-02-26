@@ -66,9 +66,9 @@ abstract class _PasswordViewModelBase with Store, BaseViewModel {
       await FirebaseAuth.instance.sendPasswordResetEmail(
         email: emailController.text.trim(),
       );
-      showSuccessAlert(viewModelContext, text: "Please check your mailbox.", title: "Mail Successfuly Sended !");
+      showSuccessAlert(viewModelContext, text: LocaleKeys.alert_check.locale, title: LocaleKeys.alert_sendedMail.locale);
     } catch (e) {
-      showError(viewModelContext, text: "Please enter a valid mail.", title: "Wrong Mail !");
+      showError(viewModelContext, text: LocaleKeys.valid_mail.locale, title: LocaleKeys.alert_wrongM.locale);
     }
   }
 }

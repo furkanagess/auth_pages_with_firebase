@@ -32,6 +32,7 @@ abstract class  LocaleKeys {
   static const alert_wrongM = 'alert.wrongM';
   static const alert = 'alert';
   static const signOut = 'signOut';
+  static const changeTheme = 'changeTheme';
   static const valid_password = 'valid.password';
   static const valid_mail = 'valid.mail';
   static const valid = 'valid';
