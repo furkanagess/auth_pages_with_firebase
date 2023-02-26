@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_function_declarations_over_variables
+
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/init/navigation/INavigationService.dart';
 

@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/constants/navigation/navigation_constants.dart';
 import 'package:flutter_auth/view/auth/auth/stream_builder.dart';
-import 'package:flutter_auth/view/auth/login/view/login_view.dart';
 import 'package:flutter_auth/view/auth/password/view/password_view.dart';
-import 'package:flutter_auth/view/auth/signup/view/signup_view.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
 
 class NavigationRoute {
@@ -18,9 +16,9 @@ class NavigationRoute {
       // case NavigationConstants.SIGNUP_VIEW:
       //   return normalNavigate(SignupView(), NavigationConstants.SIGNUP_VIEW);
       case NavigationConstants.PASSWORD_VIEW:
-        return normalNavigate(PasswordView(), NavigationConstants.PASSWORD_VIEW);
+        return normalNavigate(const PasswordView(), NavigationConstants.PASSWORD_VIEW);
       case NavigationConstants.AUTH_STREAM:
-        return normalNavigate(AuthStream(), NavigationConstants.AUTH_STREAM);
+        return normalNavigate(const AuthStream(), NavigationConstants.AUTH_STREAM);
       default:
         return MaterialPageRoute(
           builder: (context) => Scaffold(
