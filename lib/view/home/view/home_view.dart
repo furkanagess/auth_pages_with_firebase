@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/base/view/base_view.dart';
+import 'package:flutter_auth/core/constants/enums/app_theme_enums.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
 import 'package:flutter_auth/core/extension/string_extension.dart';
+import 'package:flutter_auth/core/init/notifier/theme_notifier.dart';
 import 'package:flutter_auth/view/home/viewModel/home_view_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:provider/provider.dart';
 
 import '../../../core/constants/svg/svg_constants.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
@@ -39,7 +42,7 @@ class HomeView extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: signOutButton(context, viewModel),
+              child: chaneThemeButton(context, viewModel),
             ),
             Expanded(
               flex: 2,
@@ -69,6 +72,36 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
       child: Center(
         child: Text(
           "Sign Out",
+          style: context.textTheme.headline6?.copyWith(
+            color: context.colors.background,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      style: ElevatedButton.styleFrom(
+        elevation: 0,
+        padding: context.paddingLow,
+        shape: StadiumBorder(),
+        backgroundColor: context.colors.onSecondary,
+      ),
+    ),
+  );
+}
+
+Padding chaneThemeButton(BuildContext context, HomeViewModel viewModel) {
+  return Padding(
+    padding: context.paddingNormal,
+    child: ElevatedButton.icon(
+      icon: Icon(
+        context.watch<ThemeNotifier>().currenThemeEnum == AppThemes.LIGHT ? Icons.dark_mode : Icons.sunny,
+        color: context.colors.background,
+      ),
+      onPressed: () {
+        context.read<ThemeNotifier>().changeTheme();
+      },
+      label: Center(
+        child: Text(
+          "Change the App Theme",
           style: context.textTheme.headline6?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,
