@@ -13,6 +13,8 @@
   - 6-) Forgot Password Authentication.
   - 7-) Develop Auth Streamer.
   - 8-) Develop the Home Page.
+  - 9-) Dark Mode
+  - 10-) Localization (EN-TR)
 
 # Libraries and Technologies
   - Flutter Base Project => https://github.com/furkanagess/flutter_base_project
