@@ -22,8 +22,9 @@ class PasswordView extends StatelessWidget {
       },
       onPageBuilder: (BuildContext context, PasswordViewModel viewModel) => Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: context.colors.background,
         appBar: AppBar(
+          backgroundColor: context.colors.onSurface,
+          elevation: 0,
           leading: IconButton(
             onPressed: () {
               viewModel.navigateToLogin();

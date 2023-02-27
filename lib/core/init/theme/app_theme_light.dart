@@ -39,6 +39,6 @@ class AppThemeLight extends AppTheme {
         background: Colors.white, // used
         onBackground: Colors.grey, // used
         surface: Colors.yellow,
-        onSurface: Colors.pink,
+        onSurface: Colors.transparent,
       );
 }

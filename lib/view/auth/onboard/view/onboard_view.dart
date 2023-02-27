@@ -7,7 +7,7 @@ import '../../../../core/base/view/base_view.dart';
 import '../../../../core/extension/context_extension.dart';
 import '../../../../core/extension/string_extension.dart';
 import '../../../../core/init/lang/locale_keys.g.dart';
-import '../../../../core/widget/avatar/onboard_circle.dart';
+import '../../../../core/widgets/avatar/onboard_circle_avatar.dart';
 import '../model/onboard_model.dart';
 import '../viewModel/onboard_view_model.dart';
 
@@ -23,7 +23,6 @@ class OnboardView extends StatelessWidget {
         model.init();
       },
       onPageBuilder: (BuildContext context, OnboardViewModel viewModel) => Scaffold(
-        backgroundColor: context.colors.background,
         body: Padding(
           padding: context.paddingNormal,
           child: Column(

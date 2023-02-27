@@ -25,7 +25,6 @@ class SignupView extends StatelessWidget {
       },
       onPageBuilder: (BuildContext context, SignUpViewModel viewModel) => Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: context.colors.background,
         body: Padding(
           padding: context.paddingNormal,
           child: Form(

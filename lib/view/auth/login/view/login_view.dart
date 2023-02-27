@@ -25,7 +25,6 @@ class LoginView extends StatelessWidget {
       },
       onPageBuilder: (BuildContext context, LoginViewModel viewModel) => Scaffold(
         resizeToAvoidBottomInset: false,
-        backgroundColor: context.colors.background,
         body: Padding(
           padding: context.paddingNormal,
           child: Column(

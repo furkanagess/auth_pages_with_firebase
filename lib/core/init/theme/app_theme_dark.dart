@@ -33,7 +33,7 @@ class AppThemeDark extends AppTheme {
         primary: Colors.blue.shade900,
         onPrimary: Colors.blue,
         secondary: Colors.black, // used
-        onSecondary: const Color(0xFF6c63ff), // used
+        onSecondary: Colors.red, // used
         error: Colors.red,
         onError: Colors.orange,
         background: Colors.white, // used
