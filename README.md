@@ -37,6 +37,21 @@
     - flutter_svg => https://pub.dev/packages/flutter_svg
     - auto_size_text => https://pub.dev/packages/auto_size_text
     - quickalert => https://pub.dev/packages/quickalert
+    
+# Application Preview
+
+
+https://user-images.githubusercontent.com/92018394/221650058-f385f687-1fa0-4ebd-b51f-bf606f36092d.mp4
+
+
+    
+# Light Mode (EN)    
+![Adsız tasarım (6)](https://user-images.githubusercontent.com/92018394/221647040-d643f0ec-a127-47c4-88b6-970d9bec16bd.png)
+
+# Dark Mode (TR)
+![dark (1)](https://user-images.githubusercontent.com/92018394/221648795-127e412c-2408-4b2c-8c93-65fef589d08f.png)
+
+
   
 # Onboard   
   - The Onboard Page, also known as the App Intro Page, is a screen that appears when a user opens a mobile app for the first time. It provides an introduction to the app and its features, and may include a series of screens with text, images, and animations that guide the user through the app's functionality. The purpose of the Onboard Page is to familiarize the user with the app's interface and help them get started with using it.
