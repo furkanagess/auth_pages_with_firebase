@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       localizationsDelegates: context.localizationDelegates, // Localization
-      locale: LanguageManager.instance.enLocale,
+      locale: context.locale,
       supportedLocales: LanguageManager.instance.supportedLocales,
       onGenerateRoute: NavigationRoute.instance.generateRoute,
       navigatorKey: NavigationService.instance.navigatorKey,

@@ -1,6 +1,8 @@
 // ignore_for_file: sort_child_properties_last
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/core/init/lang/language_manager.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
@@ -44,11 +46,11 @@ class HomeView extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: chaneThemeButton(context, viewModel),
+              child: changeThemeButton(context, viewModel),
             ),
             Expanded(
               flex: 2,
-              child: signOutButton(context, viewModel),
+              child: changeLanguageDropdown(context, viewModel),
             ),
             Expanded(
               flex: 2,
@@ -90,7 +92,7 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
   );
 }
 
-Padding chaneThemeButton(BuildContext context, HomeViewModel viewModel) {
+Padding changeThemeButton(BuildContext context, HomeViewModel viewModel) {
   return Padding(
     padding: context.paddingNormal,
     child: ElevatedButton.icon(
@@ -115,6 +117,36 @@ Padding chaneThemeButton(BuildContext context, HomeViewModel viewModel) {
         padding: context.paddingLow,
         shape: const StadiumBorder(),
         backgroundColor: context.colors.onSecondary,
+      ),
+    ),
+  );
+}
+
+Padding changeLanguageDropdown(BuildContext context, HomeViewModel viewModel) {
+  return Padding(
+    padding: context.paddingNormal,
+    child: Card(
+      color: context.colors.onSecondary,
+      child: ListTile(
+        title: Text(LocaleKeys.changeLanguage.locale),
+        textColor: context.colors.background,
+        trailing: DropdownButton<Locale>(
+          items: [
+            DropdownMenuItem(
+              child: Text("Türkçe"),
+              value: LanguageManager.instance.trLocale,
+            ),
+            DropdownMenuItem(
+              child: Text("English"),
+              value: LanguageManager.instance.enLocale,
+            ),
+          ],
+          onChanged: (value) {
+            if (value != null) {
+              context.setLocale(value);
+            }
+          },
+        ),
       ),
     ),
   );

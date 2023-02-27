@@ -1,0 +1,52 @@
+{
+    "welcome":"Uygulamama hoş geldiniz",
+    "onBoard": {
+        "page1": {
+            "title": "1960'larda yayınlanarak popüler hale getirildi",
+            "description":"Sadece beş yüzyıldan kalma değil, aynı zamanda aslında değişmeden kalan elektronik dizgide sıçradı."
+        },
+        "page2": {
+            "title": "Sürümde popüler hale getirildi",
+            "description": "Sadece beş yüzyıldan kalma değil, aynı zamanda elektronik dizgiden sıçrama, esasen değişmeden hayatta kaldı."
+        },
+        "page3": {
+            "title": "Sadece beş yüzyıl hayatta kalmadı.",
+            "description": "Sadece beş yüzyıldan kalma değil, aynı zamanda aslında değişmeden kalan elektronik dizgide sıçradı."
+        },
+        "skip":"Geç"
+    
+    },
+    "login":{
+        "mail":"Mail",
+        "password":"Şifre",
+        "login":"Giriş Yap",
+        "forgot":"Şifremi Unuttum ?",
+        "noAccount":"Hesabınınız yok mu ?   ",
+        "signup":"Kayıt Ol"
+        
+    },
+
+    "signup":{
+        "name":"İsim",
+        "account":"Zaten bir hesabınız var mı ?   "
+    },
+    "reset":"Şifreyi Sıfırla",
+    "alert":{
+"validMP":"Lütfen Geçerli Bir Şifre & Mail Giriniz.",
+"wrongMP":"Hatalı Mail & Şifre !",
+"check":"Lütfen posta kutunuzu kontrol ediniz.",
+"validM":"Lütfen Geçerli bir Mail Giriniz.",
+"sendedMail":"Mail Başarıyla Gönderildi !",
+"wrongM":"Hatalı Mail !"
+    },
+    "signOut":"Çıkış Yap",
+    "changeTheme" :"Uygulama Temasını Değiştir",
+    "changeLanguage":"Dili Değiştir",
+    "english":"İngilizce",
+    
+    "valid":{
+        "password":"Lütfen Geçerli Bir Şifre Giriniz.",
+        "mail":"Lütfen Geçerli bir Mail Giriniz."
+    }
+
+}

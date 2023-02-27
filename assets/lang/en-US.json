@@ -41,6 +41,8 @@
     },
     "signOut":"Sign Out",
     "changeTheme" :"Change the App Theme",
+    "changeLanguage":"Language Change",
+    "turkish":"Türkçe",
     
     "valid":{
         "password":"Enter a valid password.",
