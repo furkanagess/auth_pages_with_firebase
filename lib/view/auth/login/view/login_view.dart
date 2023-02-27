@@ -1,15 +1,16 @@
-import 'package:easy_localization/easy_localization.dart';
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/view/auth/password/view/password_view.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_auth/core/base/view/base_view.dart';
-import 'package:flutter_auth/core/constants/svg/svg_constants.dart';
-import 'package:flutter_auth/core/extension/context_extension.dart';
-import 'package:flutter_auth/core/extension/string_extension.dart';
-import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
-import 'package:flutter_auth/view/auth/login/viewModel/login_view_model.dart';
+
+import '../../../../core/base/view/base_view.dart';
+import '../../../../core/constants/svg/svg_constants.dart';
+import '../../../../core/extension/context_extension.dart';
+import '../../../../core/extension/string_extension.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../viewModel/login_view_model.dart';
 
 class LoginView extends StatelessWidget {
   final VoidCallback onClickedSignUp;
@@ -29,7 +30,7 @@ class LoginView extends StatelessWidget {
           padding: context.paddingNormal,
           child: Column(
             children: [
-              Spacer(
+              const Spacer(
                 flex: 2,
               ),
               Expanded(
@@ -56,7 +57,7 @@ class LoginView extends StatelessWidget {
                 flex: 1,
                 child: signupRow(context, viewModel),
               ),
-              Spacer(),
+              const Spacer(),
             ],
           ),
         ),
@@ -68,7 +69,7 @@ class LoginView extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        Spacer(),
+        const Spacer(),
         RichText(
           text: TextSpan(
             text: LocaleKeys.login_noAccount.locale,
@@ -85,7 +86,7 @@ class LoginView extends StatelessWidget {
             ],
           ),
         ),
-        Spacer(),
+        const Spacer(),
       ],
     );
   }
@@ -122,7 +123,7 @@ class LoginView extends StatelessWidget {
         style: ElevatedButton.styleFrom(
           elevation: 0,
           padding: context.paddingLow,
-          shape: StadiumBorder(),
+          shape: const StadiumBorder(),
           backgroundColor: context.colors.onSecondary,
         ),
       ),

@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:flutter_auth/core/constants/enums/locale_keys_enum.dart';
-import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
+
+import '../../constants/enums/locale_keys_enum.dart';
 
 class LocaleManager {
   LocaleManager._init() {

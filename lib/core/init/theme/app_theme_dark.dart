@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 import 'app_theme.dart';
 
-class AppThemeLight extends AppTheme {
-  static AppThemeLight? _instance;
-  static AppThemeLight get instance {
-    _instance ??= AppThemeLight._init();
+class AppThemeDark extends AppTheme {
+  static AppThemeDark? _instance;
+  static AppThemeDark get instance {
+    _instance ??= AppThemeDark._init();
     return _instance!;
   }
 
-  AppThemeLight._init();
+  AppThemeDark._init();
 
   @override
   ThemeData get theme => ThemeData.light().copyWith(

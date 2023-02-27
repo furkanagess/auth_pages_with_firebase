@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/constants/enums/app_theme_enums.dart';
-import 'package:flutter_auth/core/init/theme/app_theme.dart';
 import 'package:flutter_auth/core/init/theme/app_theme_light.dart';
 
 class ThemeNotifier extends ChangeNotifier {

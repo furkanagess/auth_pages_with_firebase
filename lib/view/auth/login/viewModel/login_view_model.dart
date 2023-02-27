@@ -1,13 +1,16 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
 import 'package:mobx/mobx.dart';
-import 'package:flutter_auth/core/base/model/base_view_model.dart';
 import 'package:quickalert/quickalert.dart';
-import 'package:flutter_auth/core/extension/context_extension.dart';
-import 'package:flutter_auth/core/extension/string_extension.dart';
+
+import '../../../../core/base/model/base_view_model.dart';
 import '../../../../core/constants/navigation/navigation_constants.dart';
+import '../../../../core/extension/context_extension.dart';
+import '../../../../core/extension/string_extension.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+
 part 'login_view_model.g.dart';
 
 class LoginViewModel = _LoginViewModelBase with _$LoginViewModel;
@@ -49,7 +52,6 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
@@ -61,7 +63,7 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
         email: emailController.text.trim(),
         password: passwordController.text.trim(),
       );
-    } on FirebaseAuthException catch (e) {
+    } on FirebaseAuthException {
       showError(
         viewModelContext,
         text: LocaleKeys.alert_validMP.locale,

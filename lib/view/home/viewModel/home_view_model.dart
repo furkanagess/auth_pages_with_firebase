@@ -1,9 +1,11 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/core/base/model/base_view_model.dart';
-import 'package:flutter_auth/core/init/notifier/theme_notifier.dart';
 import 'package:mobx/mobx.dart';
-import 'package:provider/provider.dart';
+
+import '../../../core/base/model/base_view_model.dart';
+
 part 'home_view_model.g.dart';
 
 class HomeViewModel = _HomeViewModelBase with _$HomeViewModel;

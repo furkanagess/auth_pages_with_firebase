@@ -1,15 +1,17 @@
+// ignore_for_file: sort_child_properties_last
+
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/core/base/view/base_view.dart';
-import 'package:flutter_auth/core/constants/enums/app_theme_enums.dart';
-import 'package:flutter_auth/core/extension/context_extension.dart';
-import 'package:flutter_auth/core/extension/string_extension.dart';
-import 'package:flutter_auth/core/init/notifier/theme_notifier.dart';
-import 'package:flutter_auth/view/home/viewModel/home_view_model.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
+import '../../../core/base/view/base_view.dart';
+import '../../../core/constants/enums/app_theme_enums.dart';
 import '../../../core/constants/svg/svg_constants.dart';
+import '../../../core/extension/context_extension.dart';
+import '../../../core/extension/string_extension.dart';
 import '../../../core/init/lang/locale_keys.g.dart';
+import '../../../core/init/notifier/theme_notifier.dart';
+import '../viewModel/home_view_model.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -25,7 +27,7 @@ class HomeView extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Spacer(
+            const Spacer(
               flex: 2,
             ),
             Expanded(
@@ -52,7 +54,7 @@ class HomeView extends StatelessWidget {
               flex: 2,
               child: signOutButton(context, viewModel),
             ),
-            Spacer(
+            const Spacer(
               flex: 2,
             ),
           ],
@@ -81,7 +83,7 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
       style: ElevatedButton.styleFrom(
         elevation: 0,
         padding: context.paddingLow,
-        shape: StadiumBorder(),
+        shape: const StadiumBorder(),
         backgroundColor: context.colors.onSecondary,
       ),
     ),
@@ -111,7 +113,7 @@ Padding chaneThemeButton(BuildContext context, HomeViewModel viewModel) {
       style: ElevatedButton.styleFrom(
         elevation: 0,
         padding: context.paddingLow,
-        shape: StadiumBorder(),
+        shape: const StadiumBorder(),
         backgroundColor: context.colors.onSecondary,
       ),
     ),

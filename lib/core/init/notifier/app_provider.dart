@@ -1,7 +1,8 @@
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
-import 'package:flutter_auth/core/init/navigation/navigation_service.dart';
-import 'package:flutter_auth/core/init/notifier/theme_notifier.dart';
+
+import '../navigation/navigation_service.dart';
+import 'theme_notifier.dart';
 
 class ApplicationProvider {
   static ApplicationProvider? _instance;

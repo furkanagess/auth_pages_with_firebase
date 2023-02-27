@@ -1,13 +1,15 @@
+// ignore_for_file: library_private_types_in_public_api, use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:quickalert/quickalert.dart';
-import 'package:flutter_auth/core/base/model/base_view_model.dart';
-import 'package:flutter_auth/core/extension/context_extension.dart';
-import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
-import 'package:flutter_auth/core/extension/string_extension.dart';
 
-import '../../../../core/constants/navigation/navigation_constants.dart';
+import '../../../../core/base/model/base_view_model.dart';
+import '../../../../core/extension/context_extension.dart';
+import '../../../../core/extension/string_extension.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+
 part 'password_view_model.g.dart';
 
 class PasswordViewModel = _PasswordViewModelBase with _$PasswordViewModel;
@@ -56,7 +58,6 @@ abstract class _PasswordViewModelBase with Store, BaseViewModel {
   }
 
   final emailController = TextEditingController();
-  @override
   void dispose() {
     emailController.dispose();
   }

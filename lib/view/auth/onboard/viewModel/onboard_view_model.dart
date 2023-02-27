@@ -1,13 +1,16 @@
-import 'package:mobx/mobx.dart';
-import 'package:flutter_auth/core/base/model/base_view_model.dart';
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/core/constants/enums/locale_keys_enum.dart';
-import 'package:flutter_auth/core/constants/navigation/navigation_constants.dart';
-import 'package:flutter_auth/core/constants/svg/svg_constants.dart';
-import 'package:flutter_auth/core/extension/string_extension.dart';
-import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
-import 'package:flutter_auth/core/init/navigation/navigation_service.dart';
-import 'package:flutter_auth/view/auth/onboard/model/onboard_model.dart';
+import 'package:mobx/mobx.dart';
+
+import '../../../../core/base/model/base_view_model.dart';
+import '../../../../core/constants/enums/locale_keys_enum.dart';
+import '../../../../core/constants/navigation/navigation_constants.dart';
+import '../../../../core/constants/svg/svg_constants.dart';
+import '../../../../core/extension/string_extension.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../model/onboard_model.dart';
+
 part 'onboard_view_model.g.dart';
 
 class OnboardViewModel = _OnboardViewModelBase with _$OnboardViewModel;

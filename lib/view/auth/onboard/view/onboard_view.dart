@@ -3,17 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:mobx/mobx.dart';
-import 'package:flutter_auth/core/base/view/base_view.dart';
-import 'package:flutter_auth/core/constants/svg/svg_constants.dart';
-import 'package:flutter_auth/core/extension/context_extension.dart';
-import 'package:flutter_auth/core/extension/string_extension.dart';
-import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
-import 'package:flutter_auth/core/widget/avatar/onboard_circle.dart';
-import 'package:flutter_auth/view/auth/onboard/model/onboard_model.dart';
-import 'package:flutter_auth/view/auth/onboard/viewModel/onboard_view_model.dart';
-
-import '../../../../core/constants/navigation/navigation_constants.dart';
+import '../../../../core/base/view/base_view.dart';
+import '../../../../core/extension/context_extension.dart';
+import '../../../../core/extension/string_extension.dart';
+import '../../../../core/init/lang/locale_keys.g.dart';
+import '../../../../core/widget/avatar/onboard_circle.dart';
+import '../model/onboard_model.dart';
+import '../viewModel/onboard_view_model.dart';
 
 class OnboardView extends StatelessWidget {
   const OnboardView({super.key});

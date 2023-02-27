@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/core/constants/navigation/navigation_constants.dart';
-import 'package:flutter_auth/view/auth/auth/stream_builder.dart';
-import 'package:flutter_auth/view/auth/password/view/password_view.dart';
-import 'package:flutter_auth/core/extension/context_extension.dart';
+
+import '../../../view/auth/auth/stream_builder.dart';
+import '../../../view/auth/password/view/password_view.dart';
+import '../../constants/navigation/navigation_constants.dart';
+import '../../extension/context_extension.dart';
 
 class NavigationRoute {
   NavigationRoute._init();
