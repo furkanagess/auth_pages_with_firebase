@@ -73,7 +73,8 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
       onPressed: () {
         viewModel.signOut();
       },
-      child: Center(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
         child: Text(
           LocaleKeys.signOut.locale,
           style: context.textTheme.headline6?.copyWith(
