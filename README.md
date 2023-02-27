@@ -90,5 +90,15 @@ https://user-images.githubusercontent.com/92018394/221650058-f385f687-1fa0-4ebd-
     ## Authentication Streamer
        - When a user logs in or signs up for an app using Firebase Authentication, a series of authentication events are triggered, such as "user signed in" or "user signed out." The authentication streamer allows developers to create a stream that listens for these events and responds accordingly. For example, if a user signs out of the app, the authentication streamer can listen for the "user signed out" event and redirect the user back to the login screen. Or, if a user signs in successfully, the authentication streamer can trigger an action to load the user's data and preferences from the app's backend server.
        ![viewModel (8)](https://user-images.githubusercontent.com/92018394/221441563-cbbf3bc0-0c7a-4790-9cee-edd50163bdde.png)
+       
+    ## Dark Mode   
+    - Description
+    
+     ![mode](https://user-images.githubusercontent.com/92018394/221653004-401c51cb-c6aa-4bf8-be37-565e639c2fa0.png)
+     
+    ## Language Support (Localization) 
+    ![local](https://user-images.githubusercontent.com/92018394/221654224-379b74b0-9c8e-41e2-a6ea-fc3e78f5b9ee.png)
+
+
 
 
