@@ -86,7 +86,7 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
         elevation: 0,
         padding: context.paddingLow,
         shape: const StadiumBorder(),
-        backgroundColor: context.colors.onSecondary,
+        backgroundColor: context.colors.error,
       ),
     ),
   );
@@ -133,11 +133,11 @@ Padding changeLanguageDropdown(BuildContext context, HomeViewModel viewModel) {
         trailing: DropdownButton<Locale>(
           items: [
             DropdownMenuItem(
-              child: Text("Türkçe"),
+              child: const Text("Türkçe"),
               value: LanguageManager.instance.trLocale,
             ),
             DropdownMenuItem(
-              child: Text("English"),
+              child: const Text("English"),
               value: LanguageManager.instance.enLocale,
             ),
           ],
