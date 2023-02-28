@@ -67,8 +67,9 @@ https://user-images.githubusercontent.com/92018394/221650058-f385f687-1fa0-4ebd-
 - 3-) Download the google-services.json add to (android/app) 
 - 4-) Copy and Paste build.gradle configurations on your project file
 - 5-) Add the firebase_core library to pubspec.yaml
-- 6-) 
-  
+- 6-) Change the main method like the sample below
+- ![main](https://user-images.githubusercontent.com/92018394/221779346-4bfe946b-5d5a-4e83-9b14-57367b8da7f7.png)
+
 ## Login Page
    - The Login Page in mobile apps is the screen where the user enters their credentials, such as a username and password, to access the app's features and data that are restricted to authenticated users. 
        -----------
