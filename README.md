@@ -1,9 +1,8 @@
 # Authentication Pages With Using Firebase
 
+- Authentication pages are essential for a mobile application. In this project, I have created these pages using Firebase technology. I have developed Onboard, Login, Signup, and Forgot Password pages as Authentication Pages. 
+- You can customize the texts, icons, images, and colors in this project according to your preferences. Additionally, you will be able to change the theme and language of the application on the Home Page. (***DARK-LIGT MODE & TURKISH-ENGLISH Support***)
 - After integrating the 'flutter_base_project' => https://github.com/furkanagess/flutter_base_project into your project, this project includes the must-have Authentication pages of a mobile application. 
-- Authentication pages are the pages where the application introduction, registration, and login processes are provided when you first use an application and this project includes ***Onboard***, ***Login***, ***Signup***, and ***Forgot Password*** sections. 
-- **The images, icons, and colors used in the pages are my preferences. After completing the necessary steps, you can change them as you wish.** 
-
 # Entegration Steps
   - 1-) Integrate 'flutter_base_project' into your project => https://github.com/furkanagess/flutter_base_project
   - 2-) Develop the Onboard Pages.
@@ -83,29 +82,34 @@ https://user-images.githubusercontent.com/92018394/221650058-f385f687-1fa0-4ebd-
        
 ## Signup Page  
    - A signup page in a mobile app is a screen that allows users to create a new account or register for the app. The signup page usually collects information such as the user's name, email address, and password.
-       ----------
-       - Firebase Entegration for Signup Page with FirebaseAuthentication (***The sample code is below.***)
+     ----------
+     - Firebase Entegration for Signup Page with FirebaseAuthentication (***The sample code is below.***)
        ![viewModel (7)](https://user-images.githubusercontent.com/92018394/221368547-67a2a478-7519-4c24-9de3-dda75ff6d9e0.png)
        
 ## Forgot Password Page
    - A forgot password page in a mobile app is a screen that allows users to reset their password if they have forgotten it. This screen is typically accessed from the login page, where users are prompted to enter their email address or username and password to access the app.
-       --------
-       - Firebase Entegration for Forgot Password Page with FirebaseAuthentication (***The sample code is below.***)
+     --------
+     - Firebase Entegration for Forgot Password Page with FirebaseAuthentication (***The sample code is below.***)
        ![forgotPassword](https://user-images.githubusercontent.com/92018394/221368736-eba47076-c492-4b5b-8d13-eae98b1924e9.png)
        
 ## Authentication Streamer
    - When a user logs in or signs up for an app using Firebase Authentication, a series of authentication events are triggered, such as "user signed in" or "user signed out." The authentication streamer allows developers to create a stream that listens for these events and responds accordingly. For example, if a user signs out of the app, the authentication streamer can listen for the "user signed out" event and redirect the user back to the login screen. Or, if a user signs in successfully, the authentication streamer can trigger an action to load the user's data and preferences from the app's backend server.
-       ------
-       - (***The sample code is below.***)
+     ------
+     - (***The sample code is below.***)
        ![viewModel (8)](https://user-images.githubusercontent.com/92018394/221441563-cbbf3bc0-0c7a-4790-9cee-edd50163bdde.png)
        
 ## Dark Mode   
-  - Description
+  - We first define two different enums named 'dark' and 'light' to hold theme values. We use these enums to change theme values. We use the 'themeNotifier' class to control the changes in these values. We change the theme values using the 'changeValue' function. We achieve the change between dark and light modes using the 'changeTheme' function.
+   ------
+   - (***The sample code is below.***)
     
      ![mode](https://user-images.githubusercontent.com/92018394/221653004-401c51cb-c6aa-4bf8-be37-565e639c2fa0.png)
      
 ## Language Support (Localization) 
-  - Dess
+  - Localization for mobile apps refers to the process of adapting an app's content to fit different languages and regions. The goal of localization is to make the app more accessible and engaging for users in different countries or regions.
+  - To provide localization, we create two separate folders named 'en-US.json' and 'tr-TR.json'. After making any changes in these folders, we need to run 'scripts/lang.sh' in the terminal. Using Provider state management, we activate these languages in the main.dart folder.
+   ------
+   - (***The sample code is below.***)
     ![local](https://user-images.githubusercontent.com/92018394/221654224-379b74b0-9c8e-41e2-a6ea-fc3e78f5b9ee.png)
 
 
