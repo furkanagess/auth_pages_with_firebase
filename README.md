@@ -62,7 +62,10 @@ https://user-images.githubusercontent.com/92018394/221650058-f385f687-1fa0-4ebd-
   ![viewModel (3)](https://user-images.githubusercontent.com/92018394/221279873-d68d23df-c2d5-4592-a76c-9a0789f5e1bb.png)
   
 # Firebase Setup 
-  - Firstly,
+  1-) Go to https://console.firebase.google.com/u/0/ and add project then give it a name for project. (Disable Google Analytics)
+  2-) When you access to home page click the Android Icon and enter your "android package name" (android/app/build.gradle) => defaultConfig
+  3-) Download the google-services.json add to (android/app) 
+  4-) Copy and Paste build.gradle configurations
   
     ## Login Page
        - The Login Page in mobile apps is the screen where the user enters their credentials, such as a username and password, to access the app's features and data that are restricted to authenticated users. 
