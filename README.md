@@ -62,44 +62,49 @@ https://user-images.githubusercontent.com/92018394/221650058-f385f687-1fa0-4ebd-
   ![viewModel (3)](https://user-images.githubusercontent.com/92018394/221279873-d68d23df-c2d5-4592-a76c-9a0789f5e1bb.png)
   
 # Firebase Setup 
-  1-) Go to https://console.firebase.google.com/u/0/ and add project then give it a name for project. (Disable Google Analytics)
-  2-) When you access to home page click the Android Icon and enter your "android package name" (android/app/build.gradle) => defaultConfig
-  3-) Download the google-services.json add to (android/app) 
-  4-) Copy and Paste build.gradle configurations
+- 1-) Go to https://console.firebase.google.com/u/0/ and add project then give it a name for project. (Disable Google Analytics)
+- 2-) When you access to home page click the Android Icon and enter your "android package name" (android/app/build.gradle) => defaultConfig
+- 3-) Download the google-services.json add to (android/app) 
+- 4-) Copy and Paste build.gradle configurations on your project file
+- 5-) Add the firebase_core library to pubspec.yaml
+- 6-) 
   
-    ## Login Page
-       - The Login Page in mobile apps is the screen where the user enters their credentials, such as a username and password, to access the app's features and data that are restricted to authenticated users. 
+## Login Page
+   - The Login Page in mobile apps is the screen where the user enters their credentials, such as a username and password, to access the app's features and data that are restricted to authenticated users. 
        -----------
        - Firebase Entegration for Login Page with FirebaseAuthentication (***The sample code is below.***)
      ![viewModel (4)](https://user-images.githubusercontent.com/92018394/221283457-ff5d36cb-65f2-436e-b634-a128134eeafa.png)
-     ---------
+       ---------
        - Password Visibility Control with Mobx State Management. (***The sample code is below.***)
        ![viewModel (5)](https://user-images.githubusercontent.com/92018394/221350825-918e0105-715c-47a1-98d1-6f4debde1893.png)
        ![viewModel (6)](https://user-images.githubusercontent.com/92018394/221368429-4fe3ae27-c1fc-40de-a33f-15114a71dbc9.png)
 
        
-    ## Signup Page  
-       - A signup page in a mobile app is a screen that allows users to create a new account or register for the app. The signup page usually collects information such as the user's name, email address, and password.
+## Signup Page  
+   - A signup page in a mobile app is a screen that allows users to create a new account or register for the app. The signup page usually collects information such as the user's name, email address, and password.
        ----------
        - Firebase Entegration for Signup Page with FirebaseAuthentication (***The sample code is below.***)
        ![viewModel (7)](https://user-images.githubusercontent.com/92018394/221368547-67a2a478-7519-4c24-9de3-dda75ff6d9e0.png)
        
-    ## Forgot Password Page
-       - A forgot password page in a mobile app is a screen that allows users to reset their password if they have forgotten it. This screen is typically accessed from the login page, where users are prompted to enter their email address or username and password to access the app.
+## Forgot Password Page
+   - A forgot password page in a mobile app is a screen that allows users to reset their password if they have forgotten it. This screen is typically accessed from the login page, where users are prompted to enter their email address or username and password to access the app.
        --------
        - Firebase Entegration for Forgot Password Page with FirebaseAuthentication (***The sample code is below.***)
        ![forgotPassword](https://user-images.githubusercontent.com/92018394/221368736-eba47076-c492-4b5b-8d13-eae98b1924e9.png)
        
-    ## Authentication Streamer
-       - When a user logs in or signs up for an app using Firebase Authentication, a series of authentication events are triggered, such as "user signed in" or "user signed out." The authentication streamer allows developers to create a stream that listens for these events and responds accordingly. For example, if a user signs out of the app, the authentication streamer can listen for the "user signed out" event and redirect the user back to the login screen. Or, if a user signs in successfully, the authentication streamer can trigger an action to load the user's data and preferences from the app's backend server.
+## Authentication Streamer
+   - When a user logs in or signs up for an app using Firebase Authentication, a series of authentication events are triggered, such as "user signed in" or "user signed out." The authentication streamer allows developers to create a stream that listens for these events and responds accordingly. For example, if a user signs out of the app, the authentication streamer can listen for the "user signed out" event and redirect the user back to the login screen. Or, if a user signs in successfully, the authentication streamer can trigger an action to load the user's data and preferences from the app's backend server.
+       ------
+       - (***The sample code is below.***)
        ![viewModel (8)](https://user-images.githubusercontent.com/92018394/221441563-cbbf3bc0-0c7a-4790-9cee-edd50163bdde.png)
        
-    ## Dark Mode   
-    - Description
+## Dark Mode   
+  - Description
     
      ![mode](https://user-images.githubusercontent.com/92018394/221653004-401c51cb-c6aa-4bf8-be37-565e639c2fa0.png)
      
-    ## Language Support (Localization) 
+## Language Support (Localization) 
+  - Dess
     ![local](https://user-images.githubusercontent.com/92018394/221654224-379b74b0-9c8e-41e2-a6ea-fc3e78f5b9ee.png)
 
 
