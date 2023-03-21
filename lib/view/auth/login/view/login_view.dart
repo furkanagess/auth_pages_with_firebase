@@ -2,15 +2,19 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/core/widgets/button/custom_button.dart';
+import 'package:flutter_auth/core/widgets/text/gesture_text.dart';
+import 'package:flutter_auth/core/widgets/textField/simple_textfield.dart';
+import 'package:flutter_auth/core/widgets/textField/obscure_textfield.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/base/view/base_view.dart';
-import '../../../../core/constants/svg/svg_constants.dart';
-import '../../../../core/extension/context_extension.dart';
-import '../../../../core/extension/string_extension.dart';
-import '../../../../core/init/lang/locale_keys.g.dart';
-import '../viewModel/login_view_model.dart';
+import 'package:flutter_auth/core/base/view/base_view.dart';
+import 'package:flutter_auth/core/constants/svg/svg_constants.dart';
+import 'package:flutter_auth/core/extension/context_extension.dart';
+import 'package:flutter_auth/core/extension/string_extension.dart';
+import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
+import 'package:flutter_auth/view/auth/login/viewModel/login_view_model.dart';
 
 class LoginView extends StatelessWidget {
   final VoidCallback onClickedSignUp;
@@ -91,14 +95,8 @@ class LoginView extends StatelessWidget {
   }
 
   Widget forgotText(BuildContext context, LoginViewModel viewModel) {
-    return GestureDetector(
-      child: Text(
-        LocaleKeys.login_forgot.locale,
-        style: context.textTheme.bodyMedium?.copyWith(
-          color: context.colors.onSecondary,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
+    return GestureText(
+      title: LocaleKeys.login_forgot.locale,
       onTap: () => viewModel.navigateToPassword(),
     );
   }
@@ -106,75 +104,36 @@ class LoginView extends StatelessWidget {
   Padding loginButton(BuildContext context, LoginViewModel viewModel) {
     return Padding(
       padding: context.paddingNormal,
-      child: ElevatedButton(
+      child: CustomButton(
         onPressed: () {
           viewModel.signIn();
         },
-        child: Center(
-          child: Text(
-            LocaleKeys.login_login.locale,
-            style: context.textTheme.titleLarge?.copyWith(
-              color: context.colors.background,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          padding: context.paddingLow,
-          shape: const StadiumBorder(),
-          backgroundColor: context.colors.onSecondary,
-        ),
+        title: LocaleKeys.login_login.locale,
       ),
     );
   }
 
   Widget buildPasswordTextField(BuildContext context, LoginViewModel viewModel) {
     return Observer(builder: (_) {
-      return TextFormField(
-        validator: (password) => password != null && password.length < 6 ? LocaleKeys.valid_password.locale : null,
+      return ObscureTextField(
+        lockControl: viewModel.isLockOpen,
         controller: viewModel.passwordController,
-        cursorColor: context.colors.onSecondary,
-        obscureText: viewModel.isLockOpen,
-        decoration: InputDecoration(
-          suffixIcon: InkWell(
-            onTap: () {
-              viewModel.isLockChange();
-            },
-            child: Observer(
-              builder: (_) {
-                return Icon(
-                  viewModel.isLockOpen ? Icons.visibility_off : Icons.visibility,
-                  color: context.iconTheme.color,
-                );
-              },
-            ),
-          ),
-          labelText: LocaleKeys.login_password.locale,
-          icon: Icon(
-            Icons.lock_outline_rounded,
-            size: 30,
-            color: context.colors.onSecondary,
-          ),
-        ),
+        icon: Icons.lock_outline_rounded,
+        label: LocaleKeys.login_password.locale,
+        onTap: () {
+          viewModel.isLockChange();
+        },
+        validator: (password) => password != null && password.length < 6 ? LocaleKeys.valid_password.locale : null,
       );
     });
   }
 
-  TextFormField buildMailTextField(BuildContext context, LoginViewModel viewModel) {
-    return TextFormField(
-      validator: (email) => email != null && email.contains("@") ? null : LocaleKeys.valid_mail.locale,
+  Widget buildMailTextField(BuildContext context, LoginViewModel viewModel) {
+    return SimpleTextField(
+      label: LocaleKeys.login_mail.locale,
       controller: viewModel.emailController,
-      cursorColor: context.colors.onSecondary,
-      decoration: InputDecoration(
-        focusColor: context.colors.onSecondary,
-        labelText: LocaleKeys.login_mail.locale,
-        icon: Icon(
-          Icons.mail_outline,
-          size: 30,
-          color: context.colors.onSecondary,
-        ),
-      ),
+      validator: (email) => email != null && email.contains("@") ? null : LocaleKeys.valid_mail.locale,
+      icon: Icons.mail_outline,
     );
   }
 
