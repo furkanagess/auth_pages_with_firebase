@@ -75,12 +75,12 @@ class SignupView extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: LocaleKeys.signup_account.locale,
-            style: context.textTheme.bodyText2,
+            style: context.textTheme.bodyMedium,
             children: [
               TextSpan(
                 recognizer: TapGestureRecognizer()..onTap = onClickedSignIn,
                 text: LocaleKeys.login_login.locale,
-                style: context.textTheme.bodyText2?.copyWith(
+                style: context.textTheme.bodyMedium?.copyWith(
                   color: context.colors.onSecondary,
                   fontWeight: FontWeight.bold,
                 ),
@@ -103,7 +103,7 @@ class SignupView extends StatelessWidget {
         child: Center(
           child: Text(
             LocaleKeys.login_signup.locale,
-            style: context.textTheme.headline6?.copyWith(
+            style: context.textTheme.titleLarge?.copyWith(
               color: context.colors.background,
               fontWeight: FontWeight.bold,
             ),

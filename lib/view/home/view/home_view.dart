@@ -40,7 +40,7 @@ class HomeView extends StatelessWidget {
               child: Center(
                 child: Text(
                   viewModel.user.email!,
-                  style: context.textTheme.headline5,
+                  style: context.textTheme.headlineSmall,
                 ),
               ),
             ),
@@ -77,7 +77,7 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
         padding: const EdgeInsets.all(8.0),
         child: Text(
           LocaleKeys.signOut.locale,
-          style: context.textTheme.headline6?.copyWith(
+          style: context.textTheme.titleLarge?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,
           ),
@@ -107,7 +107,7 @@ Padding changeThemeButton(BuildContext context, HomeViewModel viewModel) {
       label: Center(
         child: Text(
           LocaleKeys.changeTheme.locale,
-          style: context.textTheme.headline6?.copyWith(
+          style: context.textTheme.titleLarge?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,
           ),

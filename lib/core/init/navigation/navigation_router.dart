@@ -28,7 +28,7 @@ class NavigationRoute {
                 Center(
                   child: Text(
                     "PAGE NOT FOUND",
-                    style: context.textTheme.headline1?.copyWith(
+                    style: context.textTheme.displayLarge?.copyWith(
                       color: context.colors.error,
                     ),
                   ),

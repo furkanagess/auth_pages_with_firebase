@@ -93,7 +93,7 @@ class OnboardView extends StatelessWidget {
       backgroundColor: context.colors.onSecondary,
       child: Text(
         LocaleKeys.onBoard_skip.locale,
-        style: context.textTheme.bodyText2?.copyWith(
+        style: context.textTheme.bodyMedium?.copyWith(
           fontWeight: FontWeight.bold,
           color: context.colors.background,
         ),
@@ -125,7 +125,7 @@ class OnboardView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLines: 2,
             model.title,
-            style: context.textTheme.headline4?.copyWith(
+            style: context.textTheme.headlineMedium?.copyWith(
               fontWeight: FontWeight.bold,
               color: context.colors.secondary,
             ),
@@ -135,7 +135,7 @@ class OnboardView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLines: 4,
             model.description,
-            style: context.textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w400, color: context.colors.onBackground),
+            style: context.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w400, color: context.colors.onBackground),
           ),
         ],
       ),

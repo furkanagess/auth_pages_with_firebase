@@ -72,12 +72,12 @@ class LoginView extends StatelessWidget {
         RichText(
           text: TextSpan(
             text: LocaleKeys.login_noAccount.locale,
-            style: context.textTheme.bodyText2,
+            style: context.textTheme.bodyMedium,
             children: [
               TextSpan(
                 recognizer: TapGestureRecognizer()..onTap = onClickedSignUp,
                 text: LocaleKeys.login_signup.locale,
-                style: context.textTheme.bodyText2?.copyWith(
+                style: context.textTheme.bodyMedium?.copyWith(
                   color: context.colors.onSecondary,
                   fontWeight: FontWeight.bold,
                 ),
@@ -94,7 +94,7 @@ class LoginView extends StatelessWidget {
     return GestureDetector(
       child: Text(
         LocaleKeys.login_forgot.locale,
-        style: context.textTheme.bodyText2?.copyWith(
+        style: context.textTheme.bodyMedium?.copyWith(
           color: context.colors.onSecondary,
           fontWeight: FontWeight.bold,
         ),
@@ -113,7 +113,7 @@ class LoginView extends StatelessWidget {
         child: Center(
           child: Text(
             LocaleKeys.login_login.locale,
-            style: context.textTheme.headline6?.copyWith(
+            style: context.textTheme.titleLarge?.copyWith(
               color: context.colors.background,
               fontWeight: FontWeight.bold,
             ),

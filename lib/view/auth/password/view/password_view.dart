@@ -78,7 +78,7 @@ class PasswordView extends StatelessWidget {
         child: Center(
           child: Text(
             LocaleKeys.reset.locale,
-            style: context.textTheme.headline6?.copyWith(
+            style: context.textTheme.titleLarge?.copyWith(
               color: context.colors.background,
               fontWeight: FontWeight.bold,
             ),
