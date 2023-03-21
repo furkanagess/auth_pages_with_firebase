@@ -3,17 +3,18 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/init/lang/language_manager.dart';
+import 'package:flutter_auth/core/widgets/button/custom_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/base/view/base_view.dart';
-import '../../../core/constants/enums/app_theme_enums.dart';
-import '../../../core/constants/svg/svg_constants.dart';
-import '../../../core/extension/context_extension.dart';
-import '../../../core/extension/string_extension.dart';
-import '../../../core/init/lang/locale_keys.g.dart';
-import '../../../core/init/notifier/theme_notifier.dart';
-import '../viewModel/home_view_model.dart';
+import 'package:flutter_auth/core/base/view/base_view.dart';
+import 'package:flutter_auth/core/constants/enums/app_theme_enums.dart';
+import 'package:flutter_auth/core/constants/svg/svg_constants.dart';
+import 'package:flutter_auth/core/extension/context_extension.dart';
+import 'package:flutter_auth/core/extension/string_extension.dart';
+import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
+import 'package:flutter_auth/core/init/notifier/theme_notifier.dart';
+import 'package:flutter_auth/view/home/viewModel/home_view_model.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({super.key});
@@ -69,26 +70,11 @@ class HomeView extends StatelessWidget {
 Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
   return Padding(
     padding: context.paddingNormal,
-    child: ElevatedButton(
+    child: CustomButton(
       onPressed: () {
         viewModel.signOut();
       },
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          LocaleKeys.signOut.locale,
-          style: context.textTheme.titleLarge?.copyWith(
-            color: context.colors.background,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      style: ElevatedButton.styleFrom(
-        elevation: 0,
-        padding: context.paddingLow,
-        shape: const StadiumBorder(),
-        backgroundColor: context.colors.error,
-      ),
+      title: LocaleKeys.signOut.locale,
     ),
   );
 }

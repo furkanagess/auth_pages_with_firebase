@@ -1,14 +1,16 @@
 // ignore_for_file: sort_child_properties_last
 
 import 'package:flutter/material.dart';
+import 'package:flutter_auth/core/widgets/button/custom_button.dart';
+import 'package:flutter_auth/core/widgets/textField/simple_textfield.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/base/view/base_view.dart';
-import '../../../../core/constants/svg/svg_constants.dart';
-import '../../../../core/extension/context_extension.dart';
-import '../../../../core/extension/string_extension.dart';
-import '../../../../core/init/lang/locale_keys.g.dart';
-import '../viewModel/password_view_model.dart';
+import 'package:flutter_auth/core/base/view/base_view.dart';
+import 'package:flutter_auth/core/constants/svg/svg_constants.dart';
+import 'package:flutter_auth/core/extension/context_extension.dart';
+import 'package:flutter_auth/core/extension/string_extension.dart';
+import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
+import 'package:flutter_auth/view/auth/password/viewModel/password_view_model.dart';
 
 class PasswordView extends StatelessWidget {
   const PasswordView({super.key});
@@ -71,44 +73,21 @@ class PasswordView extends StatelessWidget {
   Padding resetButton(BuildContext context, PasswordViewModel viewModel) {
     return Padding(
       padding: context.paddingNormal,
-      child: ElevatedButton(
+      child: CustomButton(
         onPressed: () {
           viewModel.resetPassword();
         },
-        child: Center(
-          child: Text(
-            LocaleKeys.reset.locale,
-            style: context.textTheme.titleLarge?.copyWith(
-              color: context.colors.background,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          padding: context.paddingLow,
-          shape: const StadiumBorder(),
-          backgroundColor: context.colors.onSecondary,
-        ),
+        title: LocaleKeys.reset.locale,
       ),
     );
   }
 
-  TextFormField buildMailTextField(BuildContext context, PasswordViewModel viewModel) {
-    return TextFormField(
+  Widget buildMailTextField(BuildContext context, PasswordViewModel viewModel) {
+    return SimpleTextField(
       controller: viewModel.emailController,
-      autovalidateMode: AutovalidateMode.onUserInteraction,
+      icon: Icons.mail_outline,
+      label: LocaleKeys.login_mail.locale,
       validator: (email) => email != null && email.contains("@") ? null : LocaleKeys.valid_mail.locale,
-      cursorColor: context.colors.onSecondary,
-      decoration: InputDecoration(
-        focusColor: context.colors.onSecondary,
-        labelText: LocaleKeys.login_mail.locale,
-        icon: Icon(
-          Icons.mail_outline,
-          size: 30,
-          color: context.colors.onSecondary,
-        ),
-      ),
     );
   }
 
