@@ -24,20 +24,7 @@ class PasswordView extends StatelessWidget {
       },
       onPageBuilder: (BuildContext context, PasswordViewModel viewModel) => Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: AppBar(
-          backgroundColor: context.colors.onSurface,
-          elevation: 0,
-          leading: IconButton(
-            onPressed: () {
-              viewModel.navigateToLogin();
-            },
-            icon: Icon(
-              Icons.arrow_back_outlined,
-              size: context.iconTheme.size,
-              color: context.iconTheme.color,
-            ),
-          ),
-        ),
+        appBar: _buildAppBar(context, viewModel),
         body: Padding(
           padding: context.paddingNormal,
           child: Column(
@@ -70,10 +57,28 @@ class PasswordView extends StatelessWidget {
     );
   }
 
+  AppBar _buildAppBar(BuildContext context, PasswordViewModel viewModel) {
+    return AppBar(
+      backgroundColor: context.colors.onSurface,
+      elevation: 0,
+      leading: IconButton(
+        onPressed: () {
+          viewModel.navigateToLogin();
+        },
+        icon: Icon(
+          Icons.arrow_back_outlined,
+          size: context.iconTheme.size,
+          color: context.iconTheme.color,
+        ),
+      ),
+    );
+  }
+
   Padding resetButton(BuildContext context, PasswordViewModel viewModel) {
     return Padding(
       padding: context.paddingNormal,
       child: CustomButton(
+        color: context.colors.onSecondary,
         onPressed: () {
           viewModel.resetPassword();
         },
@@ -83,7 +88,7 @@ class PasswordView extends StatelessWidget {
   }
 
   Widget buildMailTextField(BuildContext context, PasswordViewModel viewModel) {
-    return SimpleTextField(
+    return CustomTextField(
       controller: viewModel.emailController,
       icon: Icons.mail_outline,
       label: LocaleKeys.login_mail.locale,

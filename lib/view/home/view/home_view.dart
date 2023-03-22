@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/init/lang/language_manager.dart';
 import 'package:flutter_auth/core/widgets/button/custom_button.dart';
+import 'package:flutter_auth/core/widgets/button/custom_icon_button.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 
@@ -71,6 +72,7 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
   return Padding(
     padding: context.paddingNormal,
     child: CustomButton(
+      color: context.colors.error,
       onPressed: () {
         viewModel.signOut();
       },
@@ -82,29 +84,13 @@ Padding signOutButton(BuildContext context, HomeViewModel viewModel) {
 Padding changeThemeButton(BuildContext context, HomeViewModel viewModel) {
   return Padding(
     padding: context.paddingNormal,
-    child: ElevatedButton.icon(
-      icon: Icon(
-        context.watch<ThemeNotifier>().currenThemeEnum == AppThemes.LIGHT ? Icons.dark_mode : Icons.sunny,
-        color: context.colors.background,
-      ),
+    child: CustomIconButton(
+      color: context.colors.onSecondary,
+      icon: context.watch<ThemeNotifier>().currenThemeEnum == AppThemes.LIGHT ? Icons.dark_mode : Icons.sunny,
       onPressed: () {
         context.read<ThemeNotifier>().changeTheme();
       },
-      label: Center(
-        child: Text(
-          LocaleKeys.changeTheme.locale,
-          style: context.textTheme.titleLarge?.copyWith(
-            color: context.colors.background,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ),
-      style: ElevatedButton.styleFrom(
-        elevation: 0,
-        padding: context.paddingLow,
-        shape: const StadiumBorder(),
-        backgroundColor: context.colors.onSecondary,
-      ),
+      title: LocaleKeys.changeTheme.locale,
     ),
   );
 }

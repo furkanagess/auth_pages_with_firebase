@@ -46,3 +46,9 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
+
+// TASKS
+// 1- fix localizations
+// 2- fix navigations (with new pattern)
+// 

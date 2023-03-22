@@ -1,8 +1,8 @@
 // ignore_for_file: sort_child_properties_last
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/widgets/button/custom_button.dart';
+import 'package:flutter_auth/core/widgets/text/custom_rich_text.dart';
 import 'package:flutter_auth/core/widgets/textField/simple_textfield.dart';
 import 'package:flutter_auth/core/widgets/textField/obscure_textfield.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
@@ -75,21 +75,10 @@ class SignupView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         const Spacer(),
-        RichText(
-          text: TextSpan(
-            text: LocaleKeys.signup_account.locale,
-            style: context.textTheme.bodyMedium,
-            children: [
-              TextSpan(
-                recognizer: TapGestureRecognizer()..onTap = onClickedSignIn,
-                text: LocaleKeys.login_login.locale,
-                style: context.textTheme.bodyMedium?.copyWith(
-                  color: context.colors.onSecondary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+        CustomRichText(
+          firstSpan: LocaleKeys.signup_account.locale,
+          secondSpan: LocaleKeys.login_login.locale,
+          onTap: onClickedSignIn,
         ),
         const Spacer(),
       ],
@@ -100,6 +89,7 @@ class SignupView extends StatelessWidget {
     return Padding(
       padding: context.paddingNormal,
       child: CustomButton(
+        color: context.colors.onSecondary,
         onPressed: () {
           viewModel.signUp();
         },
@@ -126,14 +116,14 @@ class SignupView extends StatelessWidget {
   }
 
   Widget buildNameTextField(BuildContext context) {
-    return SimpleTextField(
+    return CustomTextField(
       label: LocaleKeys.signup_name.locale,
       icon: Icons.person_outline_outlined,
     );
   }
 
   Widget buildMailTextField(BuildContext context, SignUpViewModel viewModel) {
-    return SimpleTextField(
+    return CustomTextField(
       controller: viewModel.emailController,
       icon: Icons.mail_outline,
       label: LocaleKeys.login_mail.locale,

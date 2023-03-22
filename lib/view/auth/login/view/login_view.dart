@@ -1,8 +1,8 @@
 // ignore_for_file: sort_child_properties_last
 
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/widgets/button/custom_button.dart';
+import 'package:flutter_auth/core/widgets/text/custom_rich_text.dart';
 import 'package:flutter_auth/core/widgets/text/gesture_text.dart';
 import 'package:flutter_auth/core/widgets/textField/simple_textfield.dart';
 import 'package:flutter_auth/core/widgets/textField/obscure_textfield.dart';
@@ -73,21 +73,10 @@ class LoginView extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
         const Spacer(),
-        RichText(
-          text: TextSpan(
-            text: LocaleKeys.login_noAccount.locale,
-            style: context.textTheme.bodyMedium,
-            children: [
-              TextSpan(
-                recognizer: TapGestureRecognizer()..onTap = onClickedSignUp,
-                text: LocaleKeys.login_signup.locale,
-                style: context.textTheme.bodyMedium?.copyWith(
-                  color: context.colors.onSecondary,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
+        CustomRichText(
+          firstSpan: LocaleKeys.login_noAccount.locale,
+          secondSpan: LocaleKeys.login_signup.locale,
+          onTap: onClickedSignUp,
         ),
         const Spacer(),
       ],
@@ -105,6 +94,7 @@ class LoginView extends StatelessWidget {
     return Padding(
       padding: context.paddingNormal,
       child: CustomButton(
+        color: context.colors.onSecondary,
         onPressed: () {
           viewModel.signIn();
         },
@@ -129,7 +119,7 @@ class LoginView extends StatelessWidget {
   }
 
   Widget buildMailTextField(BuildContext context, LoginViewModel viewModel) {
-    return SimpleTextField(
+    return CustomTextField(
       label: LocaleKeys.login_mail.locale,
       controller: viewModel.emailController,
       validator: (email) => email != null && email.contains("@") ? null : LocaleKeys.valid_mail.locale,

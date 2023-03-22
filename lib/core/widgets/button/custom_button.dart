@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.title});
+  const CustomButton({super.key, required this.onPressed, required this.title, this.color});
   final VoidCallback onPressed;
   final String title;
+  final Color? color;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -13,7 +14,7 @@ class CustomButton extends StatelessWidget {
         elevation: 0,
         padding: context.paddingLow,
         shape: const StadiumBorder(),
-        backgroundColor: context.colors.onSecondary,
+        backgroundColor: color,
       ),
       child: Center(
         child: Text(

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import '../../home/view/home_view.dart';
+import 'package:flutter_auth/view/home/view/home_view.dart';
 import 'auth_page.dart';
 
 class AuthStream extends StatelessWidget {
