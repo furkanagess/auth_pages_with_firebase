@@ -1,15 +1,13 @@
-// ignore_for_file: library_private_types_in_public_api
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:quickalert/quickalert.dart';
 
-import '../../../../core/base/model/base_view_model.dart';
-import '../../../../core/constants/navigation/navigation_constants.dart';
-import '../../../../core/extension/context_extension.dart';
-import '../../../../core/extension/string_extension.dart';
-import '../../../../core/init/lang/locale_keys.g.dart';
+import 'package:flutter_auth/core/base/model/base_view_model.dart';
+import 'package:flutter_auth/core/constants/navigation/navigation_constants.dart';
+import 'package:flutter_auth/core/extension/context_extension.dart';
+import 'package:flutter_auth/core/extension/string_extension.dart';
+import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
 
 part 'login_view_model.g.dart';
 
@@ -37,7 +35,8 @@ abstract class _LoginViewModelBase with Store, BaseViewModel {
     navigation.navigateToPage(path: NavigationConstants.PASSWORD_VIEW);
   }
 
-  void showError(BuildContext context, {required String text, required String title}) {
+  void showError(BuildContext context,
+      {required String text, required String title}) {
     QuickAlert.show(
       context: context,
       type: QuickAlertType.error,

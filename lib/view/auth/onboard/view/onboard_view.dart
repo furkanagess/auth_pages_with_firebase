@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/base/view/base_view.dart';
-import '../../../../core/extension/context_extension.dart';
-import '../../../../core/extension/string_extension.dart';
-import '../../../../core/init/lang/locale_keys.g.dart';
-import '../../../../core/widgets/avatar/onboard_circle_avatar.dart';
-import '../model/onboard_model.dart';
-import '../viewModel/onboard_view_model.dart';
+import 'package:flutter_auth/core/base/view/base_view.dart';
+import 'package:flutter_auth/core/extension/context_extension.dart';
+import 'package:flutter_auth/core/extension/string_extension.dart';
+import 'package:flutter_auth/core/init/lang/locale_keys.g.dart';
+import 'package:flutter_auth/core/widgets/avatar/onboard_circle_avatar.dart';
+import 'package:flutter_auth/view/auth/onboard/model/onboard_model.dart';
+import 'package:flutter_auth/view/auth/onboard/viewModel/onboard_view_model.dart';
 
 class OnboardView extends StatelessWidget {
   const OnboardView({super.key});
@@ -22,7 +22,8 @@ class OnboardView extends StatelessWidget {
         model.setContext(context);
         model.init();
       },
-      onPageBuilder: (BuildContext context, OnboardViewModel viewModel) => Scaffold(
+      onPageBuilder: (BuildContext context, OnboardViewModel viewModel) =>
+          Scaffold(
         body: Padding(
           padding: context.paddingNormal,
           child: Column(
@@ -87,7 +88,8 @@ class OnboardView extends StatelessWidget {
     );
   }
 
-  FloatingActionButton buildSkipButton(BuildContext context, OnboardViewModel viewModel) {
+  FloatingActionButton buildSkipButton(
+      BuildContext context, OnboardViewModel viewModel) {
     return FloatingActionButton(
       elevation: 10,
       backgroundColor: context.colors.onSecondary,
@@ -135,7 +137,9 @@ class OnboardView extends StatelessWidget {
             textAlign: TextAlign.center,
             maxLines: 4,
             model.description,
-            style: context.textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w400, color: context.colors.onBackground),
+            style: context.textTheme.titleMedium?.copyWith(
+                fontWeight: FontWeight.w400,
+                color: context.colors.onBackground),
           ),
         ],
       ),

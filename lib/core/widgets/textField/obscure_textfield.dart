@@ -2,11 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 
+@immutable
 class ObscureTextField extends StatelessWidget {
-  const ObscureTextField({super.key, this.label, this.icon, required this.lockControl, this.controller, this.validator, this.onTap});
+  const ObscureTextField({
+    super.key,
+    this.label,
+    this.icon,
+    this.lockControl,
+    this.controller,
+    this.validator,
+    this.onTap,
+  });
   final String? label;
   final IconData? icon;
-  final bool lockControl;
+  final bool? lockControl;
   final TextEditingController? controller;
   final FormFieldValidator? validator;
   final GestureTapCallback? onTap;
@@ -16,14 +25,14 @@ class ObscureTextField extends StatelessWidget {
       validator: validator,
       controller: controller,
       cursorColor: context.colors.onSecondary,
-      obscureText: lockControl,
+      obscureText: lockControl!,
       decoration: InputDecoration(
         suffixIcon: InkWell(
           onTap: onTap,
           child: Observer(
             builder: (_) {
               return Icon(
-                lockControl ? Icons.visibility_off : Icons.visibility,
+                lockControl! ? Icons.visibility_off : Icons.visibility,
                 color: context.iconTheme.color,
               );
             },

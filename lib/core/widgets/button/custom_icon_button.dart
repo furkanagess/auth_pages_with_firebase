@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
 
+@immutable
 class CustomIconButton extends StatelessWidget {
-  const CustomIconButton({super.key, required this.onPressed, required this.title, required this.icon, this.color});
-  final VoidCallback onPressed;
-  final String title;
-  final IconData icon;
+  const CustomIconButton({
+    super.key,
+    this.onPressed,
+    this.title,
+    this.icon,
+    this.color,
+  });
+  final VoidCallback? onPressed;
+  final String? title;
+  final IconData? icon;
   final Color? color;
   @override
   Widget build(BuildContext context) {
@@ -17,7 +24,7 @@ class CustomIconButton extends StatelessWidget {
       onPressed: onPressed,
       label: Center(
         child: Text(
-          title,
+          title!,
           style: context.textTheme.titleLarge?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,

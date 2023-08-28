@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_function_declarations_over_variables
-
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/init/navigation/INavigationService.dart';
 
@@ -18,6 +16,7 @@ class NavigationService implements INavigationService {
 
   @override
   Future<void> navigateToPageClear({String? path, Object? data}) async {
-    await navigatorKey.currentState!.pushNamedAndRemoveUntil(path!, removeAllOldRoutes, arguments: data);
+    await navigatorKey.currentState!
+        .pushNamedAndRemoveUntil(path!, removeAllOldRoutes, arguments: data);
   }
 }

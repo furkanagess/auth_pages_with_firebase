@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth/core/extension/context_extension.dart';
 
+@immutable
 class CustomButton extends StatelessWidget {
-  const CustomButton({super.key, required this.onPressed, required this.title, this.color});
-  final VoidCallback onPressed;
-  final String title;
+  const CustomButton({
+    super.key,
+    this.onPressed,
+    this.title,
+    this.color,
+  });
+  final VoidCallback? onPressed;
+  final String? title;
   final Color? color;
   @override
   Widget build(BuildContext context) {
@@ -18,7 +24,7 @@ class CustomButton extends StatelessWidget {
       ),
       child: Center(
         child: Text(
-          title,
+          title!,
           style: context.textTheme.titleLarge?.copyWith(
             color: context.colors.background,
             fontWeight: FontWeight.bold,
